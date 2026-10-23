@@ -34,7 +34,6 @@
     --bg-sidebar:     var(--bg-panel);
     --font-heading:   var(--font-body);
 }
-.logo-text { color: var(--accent); }
 .sql-keyword   { color: #81a1c1; font-weight: 600; }
 .sql-function  { color: #88c0d0; }
 .sql-type      { color: #ebcb8b; font-style: italic; }

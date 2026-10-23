@@ -6,8 +6,8 @@ If you find a security issue in Ledger, please **don't open a public GitHub issu
 
 Instead, report it privately through one of these channels:
 
-- **GitHub Security Advisories** (preferred): [Open a draft advisory](https://github.com/ClearanceClarence/Ledger/security/advisories/new). This is GitHub's built-in private channel for vulnerability reports.
-- **Email**: send to the maintainer's address listed on their [GitHub profile](https://github.com/ClearanceClarence). Encrypt with PGP if you have a key.
+- **GitHub Security Advisories** (preferred): [Open a draft advisory](https://github.com/ClearanceClarence-Software/Ledger/security/advisories/new). This is GitHub's built-in private channel for vulnerability reports.
+- **Email**: send to the maintainer's address listed on their [GitHub profile](https://github.com/ClearanceClarence-Software). Encrypt with PGP if you have a key.
 
 Please include:
 

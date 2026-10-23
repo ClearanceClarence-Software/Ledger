@@ -37,7 +37,6 @@
     --bg-sidebar:     var(--bg-panel);
     --font-heading:   var(--font-body);
 }
-.logo-text { color: var(--accent); }
 .status-dot.online { box-shadow: 0 0 4px var(--accent); }
 .data-table th { background: var(--bg-panel-alt); border-bottom: 2px solid var(--border); }
 .data-table td { border-bottom: 1px solid var(--border); }

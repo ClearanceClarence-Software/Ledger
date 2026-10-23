@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ledger">
   <title>Ledger</title>
-  <rect width="64" height="64" rx="14" fill="#4ade80"/>
-  <rect x="14" y="18" width="36" height="6" rx="2" fill="#0a0d11"/>
-  <rect x="14" y="29" width="28" height="6" rx="2" fill="#0a0d11" opacity="0.7"/>
-  <rect x="14" y="40" width="36" height="6" rx="2" fill="#0a0d11" opacity="0.45"/>
+  <rect width="64" height="64" rx="14" fill="#F2F2EF"/>
+  <line x1="15.50" y1="20.00" x2="48.50" y2="20.00" stroke="#0F0F0F" stroke-width="2.25"/>
+  <line x1="15.50" y1="29.00" x2="48.50" y2="29.00" stroke="#0F0F0F" stroke-width="2.25"/>
+  <line x1="15.50" y1="38.00" x2="48.50" y2="38.00" stroke="#0F0F0F" stroke-width="2.25"/>
+  <line x1="15.50" y1="47.00" x2="48.50" y2="47.00" stroke="#0F0F0F" stroke-width="2.25"/>
+  <line x1="24.50" y1="12.50" x2="24.50" y2="51.50" stroke="#D2231A" stroke-width="2.62"/>
 </svg>

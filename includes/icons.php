@@ -69,20 +69,24 @@ function icon(string $name, int $size = 16, string $class = ''): string
 }
 
 /**
- * Ledger logo — square brackets + database cylinder (8E)
- * Usage: <?= ledger_logo(20) ?>  or  <?= ledger_logo(32, '#4ade80') ?>
+ * Ledger mark — a ruled page with a red margin line.
+ * Rules follow $color (defaults to the surrounding text color); the margin
+ * line takes $accent. Below 48px the mark drops to three heavier rules.
+ * Usage: <?= ledger_logo(20) ?>  or  <?= ledger_logo(32, '#0F0F0F', '#D2231A') ?>
  */
-function ledger_logo(int $size = 20, string $color = 'currentColor'): string
+function ledger_logo(int $size = 20, string $color = 'currentColor', string $accent = 'var(--accent)'): string
 {
-    // New Ledger mark — brackets + 3 horizontal bars (book/ledger metaphor).
-    // Square aspect so it slots in anywhere a logo glyph fits.
-    $w = $size;
-    $h = $size;
-    return '<svg width="' . $w . '" height="' . $h . '" viewBox="0 0 64 64" fill="none" style="display:inline-block;vertical-align:middle;flex-shrink:0;">'
-        . '<path d="M14 8H6v48h8" stroke="' . $color . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
-        . '<path d="M50 8h8v48h-8" stroke="' . $color . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
-        . '<rect x="18" y="22" width="28" height="4.5" rx="1.25" fill="' . $color . '"/>'
-        . '<rect x="18" y="32" width="22" height="4.5" rx="1.25" fill="' . $color . '" opacity="0.7"/>'
-        . '<rect x="18" y="42" width="28" height="4.5" rx="1.25" fill="' . $color . '" opacity="0.45"/>'
-        . '</svg>';
+    $svg = '<svg width="' . $size . '" height="' . $size . '" viewBox="0 0 64 64" fill="none" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;">';
+    if ($size < 48) {
+        foreach ([14, 32, 50] as $y) {
+            $svg .= '<line x1="8" y1="' . $y . '" x2="56" y2="' . $y . '" stroke="' . $color . '" stroke-width="5"/>';
+        }
+        $svg .= '<line x1="22" y1="4" x2="22" y2="60" stroke="' . $accent . '" stroke-width="6"/>';
+    } else {
+        foreach ([16, 28, 40, 52] as $y) {
+            $svg .= '<line x1="10" y1="' . $y . '" x2="54" y2="' . $y . '" stroke="' . $color . '" stroke-width="2.5"/>';
+        }
+        $svg .= '<line x1="22" y1="6" x2="22" y2="58" stroke="' . $accent . '" stroke-width="3"/>';
+    }
+    return $svg . '</svg>';
 }

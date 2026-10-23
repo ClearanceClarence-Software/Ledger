@@ -218,7 +218,7 @@ if ($step === 3 && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Load theme for styling
 $themeCss = 'themes/dark-industrial/style.css';
-$themeOverride = '';
+$themeOverride = 'themes/ledger-light/style.css';
 $cookieTheme = $_COOKIE['ledger_theme'] ?? '';
 if ($cookieTheme && is_dir(__DIR__ . '/themes/' . basename($cookieTheme))) {
     $themeOverride = 'themes/' . ih(basename($cookieTheme)) . '/style.css';
@@ -235,7 +235,7 @@ if ($cookieTheme && is_dir(__DIR__ . '/themes/' . basename($cookieTheme))) {
     <link rel="apple-touch-icon" href="assets/favicon-180.png">
     <title>Ledger — Setup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $themeCss ?>">
     <?php if ($themeOverride && $themeOverride !== $themeCss): ?>
     <link rel="stylesheet" href="<?= $themeOverride ?>">
@@ -268,12 +268,13 @@ if ($cookieTheme && is_dir(__DIR__ . '/themes/' . basename($cookieTheme))) {
             gap: 10px;
             margin-bottom: 6px;
         }
-        .installer-logo svg { color: var(--accent); }
+        .installer-logo { color: var(--text-primary); }
         .installer-logo-text {
-            font-family: var(--font-mono);
-            font-weight: 700;
+            font-family: var(--font-heading);
+            font-weight: 600;
             font-size: 20px;
-            color: var(--accent);
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
         }
         .installer-subtitle {
             font-size: var(--font-size-sm);
@@ -594,12 +595,11 @@ if ($cookieTheme && is_dir(__DIR__ . '/themes/' . basename($cookieTheme))) {
         <!-- Header -->
         <div class="installer-header">
             <div class="installer-logo">
-                <svg width="28" height="28" viewBox="0 0 64 64" fill="none" style="color:var(--accent);">
-                    <path d="M14 8H6v48h8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M50 8h8v48h-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    <rect x="18" y="22" width="28" height="4.5" rx="1.25" fill="currentColor"/>
-                    <rect x="18" y="32" width="22" height="4.5" rx="1.25" fill="currentColor" opacity="0.7"/>
-                    <rect x="18" y="42" width="28" height="4.5" rx="1.25" fill="currentColor" opacity="0.45"/>
+                <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                    <line x1="8" y1="14" x2="56" y2="14" stroke="currentColor" stroke-width="5"/>
+                    <line x1="8" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="5"/>
+                    <line x1="8" y1="50" x2="56" y2="50" stroke="currentColor" stroke-width="5"/>
+                    <line x1="22" y1="4" x2="22" y2="60" stroke="var(--accent)" stroke-width="6"/>
                 </svg>
                 <span class="installer-logo-text">Ledger Setup</span>
             </div>

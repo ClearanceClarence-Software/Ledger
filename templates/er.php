@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         text:    cv('--text-primary', '#d8d8e4'),
         textDim: cv('--text-muted', '#4e4e5e'),
         textSec: cv('--text-secondary', '#8b8b9a'),
-        accent:  cv('--accent', '#4ade80'),
+        accent:  cv('--accent', '#D2231A'),
         warning: cv('--warning', '#f0a030'),
         info:    cv('--info', '#6b9fc4'),
         gold:    cv('--gold', '#e8c34a'),

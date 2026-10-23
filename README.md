@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ClearanceClarence/Ledger/refs/heads/main/assets/logo.svg" alt="Ledger" width="540">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ClearanceClarence-Software/Ledger/refs/heads/main/assets/logo-dark.svg">
+    <img src="https://raw.githubusercontent.com/ClearanceClarence-Software/Ledger/refs/heads/main/assets/logo.svg" alt="Ledger" width="420">
+  </picture>
 </p>
 
 <p align="center">
@@ -7,12 +10,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.2--beta-4ade80?style=flat-square" alt="Version 1.0.2-beta">
-  <img src="https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/MySQL-5.7+-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/MariaDB-10.3+-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License">
-  <img src="https://img.shields.io/badge/Dependencies-Zero-orange?style=flat-square" alt="Zero Dependencies">
+  <img src="https://img.shields.io/badge/Version-1.0.2--beta-D2231A?style=flat-square" alt="Version 1.0.2-beta">
+  <img src="https://img.shields.io/badge/PHP-7.4+-0F0F0F?style=flat-square&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL-5.7+-0F0F0F?style=flat-square&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/MariaDB-10.3+-0F0F0F?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB">
+  <img src="https://img.shields.io/badge/License-MIT-5C5B57?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/badge/Dependencies-Zero-5C5B57?style=flat-square" alt="Zero Dependencies">
 </p>
 
 <p align="center">
@@ -67,7 +70,7 @@ Ledger is a ground-up replacement that keeps the one thing phpMyAdmin gets right
 | **Partitions** | View only | Full management: create, add, drop, truncate, optimize, rebuild, remove all |
 | **Import** | Standard form | Drag-and-drop SQL/CSV with syntax-highlighted preview |
 | **Auth** | HTTP Basic or cookie-based with manual config | Bcrypt + optional TOTP 2FA, brute force lockout, CSRF, IP whitelist |
-| **Themes** | 3 color schemes | 20 polished themes (10 light, 10 dark) + custom theme API + per-zone font control |
+| **Themes** | 3 color schemes | 22 polished themes (11 light, 11 dark) + custom theme API + per-zone font control |
 | **Docker** | Not included | `docker-compose up` — Ledger + MySQL running in seconds |
 | **Dependencies** | Requires Composer on v5.2+ | Zero. Pure PHP + vanilla JS. Entire codebase is in the repo |
 
@@ -76,7 +79,7 @@ Ledger is a ground-up replacement that keeps the one thing phpMyAdmin gets right
 ## 🚀 Get Started
 
 ```bash
-git clone https://github.com/ClearanceClarence/Ledger.git
+git clone https://github.com/ClearanceClarence-Software/Ledger.git
 ```
 
 Copy the `ledger/` folder into your web root (`htdocs/`, `www/`, `public_html/`) and open it in a browser.
@@ -96,7 +99,7 @@ Works out of the box with **XAMPP**, **WAMP**, **MAMP**, **Laragon**, **DDEV**, 
 Run Ledger with MySQL in one command:
 
 ```bash
-git clone https://github.com/ClearanceClarence/Ledger.git
+git clone https://github.com/ClearanceClarence-Software/Ledger.git
 cd Ledger
 docker-compose up -d
 ```
@@ -513,13 +516,14 @@ Not bolted on. Ledger ships with a 12-step security chain — all opt-in so loca
 
 ## 🎨 Theming & Fonts
 
-### 10 Built-In Themes
+### 22 Built-In Themes
 
 | Light | Dark |
 |:------|:-----|
+| **Ledger** — paper and ink, one red margin line *(default)* | **Ledger Dark** — ink and paper reversed, same red line |
 | **Atom One Light** — crisp white, vibrant blue/orange/green | **Carbon** — charcoal gray, VS Code blue |
 | **Catppuccin Latte** — warm cream, soft pastel accents | **Catppuccin Mocha** — soothing pastels on warm dark |
-| **Clean** — crisp white, blue accents *(default)* | **Dark Industrial** — deep black, neon green |
+| **Clean** — crisp white, blue accents | **Dark Industrial** — deep black, neon green |
 | **Forge** — white, green accents | **Dracula** — purple, pink, cyan on charcoal |
 | **GitHub Light** — GitHub's familiar white/blue | **GitHub Dark** — GitHub's dark mode, charcoal/blue/green |
 | **Gruvbox Light** — paper-warm, earthy tones | **Gruvbox Dark** — warm retro browns and oranges |
@@ -528,7 +532,7 @@ Not bolted on. Ledger ships with a 12-step security chain — all opt-in so loca
 | **Sand** — warm beige, amber tones | **Solarized Dark** — Ethan Schoonover's classic |
 | **Solarized Light** — the light companion | **Tokyo Night** — deep blue with neon cyan/purple |
 
-20 themes total — each covers: surfaces, borders, text hierarchy, all SQL token colors (12 types), editor chrome, autocomplete, inline editing states, scrollbars, badges, modals, cell types, form inputs, buttons, panel sections, EXPLAIN badges, trigger badges, FK links, danger zones, and zebra striping.
+22 themes total — each covers: surfaces, borders, text hierarchy, all SQL token colors (12 types), editor chrome, autocomplete, inline editing states, scrollbars, badges, modals, cell types, form inputs, buttons, panel sections, EXPLAIN badges, trigger badges, FK links, danger zones, and zebra striping.
 
 Switch themes from the header dropdown — organized into Light and Dark groups, alphabetically sorted. Saved to cookie. Takes effect immediately, no page reload.
 
@@ -544,9 +548,9 @@ Switch themes from the header dropdown — organized into Light and Dark groups,
 | Table Data | `--font-data` | Cell values in data tables |
 | SQL / Code | `--font-mono` | SQL editor, code blocks, query bar |
 
-**28 curated fonts**: 16 sans-serif (DM Sans, Inter, Nunito Sans, Open Sans, Lato, Roboto, Source Sans 3, Outfit, Sora, Work Sans, Poppins, IBM Plex Sans + system fallbacks) and 12 monospace (JetBrains Mono, Fira Code, Source Code Pro, IBM Plex Mono, Roboto Mono, Inconsolata, Space Mono, Ubuntu Mono + system fallbacks).
+**30 curated fonts**: 17 sans-serif (Schibsted Grotesk, DM Sans, Inter, Nunito Sans, Open Sans, Lato, Roboto, Source Sans 3, Outfit, Sora, Work Sans, Poppins, IBM Plex Sans + system fallbacks) and 13 monospace (Geist Mono, JetBrains Mono, Fira Code, Source Code Pro, IBM Plex Mono, Roboto Mono, Inconsolata, Space Mono, Ubuntu Mono + system fallbacks).
 
-Each zone has a live preview panel that updates as you select. Google Fonts are loaded on demand — only the fonts you actually choose are fetched.
+The defaults are Schibsted Grotesk for the interface and Geist Mono for data and SQL. Each zone has a live preview panel that updates as you select. Google Fonts are loaded on demand — only the fonts you actually choose are fetched.
 
 ### Custom Themes
 
@@ -650,7 +654,7 @@ ledger/
 │   │                            # favorites, sidebar filter, persistent drafts,
 │   │                            # mini-editor highlighter, shortcut overlay
 │   └── qr.js                    # QR code generator (MIT, Kazuhiko Arase)
-├── themes/                      # 20 themes (10 light + 10 dark)
+├── themes/                      # 22 themes (11 light + 11 dark)
 └── logs/                        # Query logs, favorites, saved queries,
     └── er/                      # ER diagram layouts (per database)
 ```
@@ -686,7 +690,7 @@ Full details in [SECURITY.md](SECURITY.md#privacy--network-behavior).
 
 1. Fork → branch → commit → PR
 2. **Theme contributions** especially welcome — add a `themes/your-theme/` folder
-3. Bug reports and feature requests via [Issues](https://github.com/ClearanceClarence/Ledger/issues)
+3. Bug reports and feature requests via [Issues](https://github.com/ClearanceClarence-Software/Ledger/issues)
 
 ---
 
@@ -701,7 +705,10 @@ See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ClearanceClarence/Ledger/refs/heads/main/assets/logo.svg" alt="Ledger" width="380">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ClearanceClarence-Software/Ledger/refs/heads/main/assets/mark.svg">
+    <img src="https://raw.githubusercontent.com/ClearanceClarence-Software/Ledger/refs/heads/main/assets/mark.svg" alt="" width="48">
+  </picture>
   <br>
   <sub>Built with PHP, vanilla JS, and zero external dependencies.</sub>
   <br>

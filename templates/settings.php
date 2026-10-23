@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Font catalog (mirrors PHP)
     var googleFonts = {
-        'DM Sans':1,'Inter':1,'Nunito Sans':1,'Open Sans':1,'Lato':1,'Roboto':1,
+        'Schibsted Grotesk':1,'Geist Mono':1,'DM Sans':1,'Inter':1,'Nunito Sans':1,'Open Sans':1,'Lato':1,'Roboto':1,
         'Source Sans 3':1,'Outfit':1,'Sora':1,'Work Sans':1,'Poppins':1,'IBM Plex Sans':1,
         'JetBrains Mono':1,'Fira Code':1,'Source Code Pro':1,'IBM Plex Mono':1,
         'Roboto Mono':1,'Inconsolata':1,'Space Mono':1,'Ubuntu Mono':1

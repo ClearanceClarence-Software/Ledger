@@ -1,7 +1,6 @@
-/* ═══════════════════════════════════════════════════════════
-   Ledger Theme: Dark Industrial
-   Deep blacks, neon green accents, industrial utility feel
-   ═══════════════════════════════════════════════════════════ */
+/* Ledger base theme: Dark Industrial
+   Deep blacks and neon green. Every other theme loads on top of this file,
+   so the layout, component and typography defaults live here. */
 
 :root {
     /* ── Surfaces ── */
@@ -42,8 +41,8 @@
     --gold-bg:        #2a2a1a;
 
     /* ── Typography ── */
-    --font-body:      'DM Sans', system-ui, sans-serif;
-    --font-mono:      'JetBrains Mono', 'Fira Code', monospace;
+    --font-body:      'Schibsted Grotesk', 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+    --font-mono:      'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
     --font-heading:   var(--font-body);
     --font-sidebar:   var(--font-body);
     --font-data:      var(--font-mono);
@@ -147,13 +146,13 @@ input, textarea, select, button { font-family: inherit; }
     gap: 8px;
     text-decoration: none;
 }
-.logo-icon { color: var(--accent); }
+.logo { color: var(--text-primary); }
 .logo-text {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: var(--font-size-lg);
-    color: var(--accent);
-    letter-spacing: -0.02em;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
 }
 .logo-version {
     font-family: var(--font-mono);

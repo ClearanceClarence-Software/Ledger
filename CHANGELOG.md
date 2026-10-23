@@ -1,10 +1,19 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ClearanceClarence/Ledger/refs/heads/main/assets/logo.svg" alt="Ledger" width="40">
+  <img src="https://raw.githubusercontent.com/ClearanceClarence-Software/Ledger/refs/heads/main/assets/mark.svg" alt="Ledger" width="40">
 </p>
 
 # Changelog
 
-All notable changes to [Ledger](https://github.com/ClearanceClarence/Ledger) are documented here.
+All notable changes to [Ledger](https://github.com/ClearanceClarence-Software/Ledger) are documented here.
+
+---
+
+## [Unreleased]
+
+### Changed
+
+- **New identity.** The mark is now a ruled page with a single red margin line, the wordmark is lowercase `ledger` set in Schibsted Grotesk, and the default typefaces are Schibsted Grotesk for the UI and Geist Mono for data and SQL (both selectable in Settings → Fonts; the previous fonts remain in the catalog). Two new themes, *Ledger* (paper) and *Ledger Dark* (ink), carry the palette — near-black, off-white, four grays and one red — and *Ledger* is the default for new installs. Existing installs keep whatever theme they had chosen. The wordmark in the header, login, 2FA and installer pages is set in the text color on every theme; only the margin line takes the theme accent. New `assets/` set: `mark.svg`, `logo.svg`, `logo-dark.svg`, favicons, the Apple touch icon and a social preview.
+- The repository moved to `ClearanceClarence-Software/Ledger`; README, SECURITY, DOCKER and CHANGELOG links updated.
 
 ---
 

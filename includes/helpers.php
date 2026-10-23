@@ -105,6 +105,7 @@ function ledger_font_catalog(): array
     return [
         'sans' => [
             ''                  => ['label' => 'Theme default', 'google' => false],
+            'Schibsted Grotesk' => ['label' => 'Schibsted Grotesk', 'google' => true, 'weights' => '400;500;600;700'],
             'DM Sans'           => ['label' => 'DM Sans', 'google' => true, 'weights' => '400;500;600;700'],
             'Inter'             => ['label' => 'Inter', 'google' => true, 'weights' => '400;500;600;700'],
             'Nunito Sans'       => ['label' => 'Nunito Sans', 'google' => true, 'weights' => '400;600;700'],
@@ -123,6 +124,7 @@ function ledger_font_catalog(): array
         ],
         'mono' => [
             ''                  => ['label' => 'Theme default', 'google' => false],
+            'Geist Mono'        => ['label' => 'Geist Mono', 'google' => true, 'weights' => '400;500'],
             'JetBrains Mono'    => ['label' => 'JetBrains Mono', 'google' => true, 'weights' => '400;500;600;700'],
             'Fira Code'         => ['label' => 'Fira Code', 'google' => true, 'weights' => '400;500;600;700'],
             'Source Code Pro'   => ['label' => 'Source Code Pro', 'google' => true, 'weights' => '400;500;600;700'],

@@ -1,0 +1,97 @@
+/* Ledger theme: paper ground, ink text, one red accent. */
+:root {
+    --bg-root:        #F2F2EF;
+    --bg-panel:       #FAFAF8;
+    --bg-panel-alt:   #ECECE8;
+    --bg-input:       #FFFFFF;
+    --bg-hover:       #E9E9E5;
+    --bg-active:      #E2E2DD;
+    --bg-selected:    #E6E6E1;
+    --row-odd:        transparent;
+    --row-even:       rgba(15, 15, 15, 0.025);
+    --border:         #E6E5E1;
+    --border-light:   #D4D3CE;
+    --border-focus:   #D2231A;
+    --text-primary:   #0F0F0F;
+    --text-secondary: #5C5B57;
+    --text-muted:     #7A7975;
+    --text-inverse:   #F2F2EF;
+    --accent:         #D2231A;
+    --accent-dim:     #E58B86;
+    --accent-bg:      #F7E6E4;
+    --warning:        #8A6414;
+    --warning-bg:     #F4ECD8;
+    --info:           #2F4A63;
+    --info-bg:        #E4EAF0;
+    --purple:         #5B4A7A;
+    --purple-bg:      #ECE8F2;
+    --danger:         #8B1E17;
+    --danger-bg:      #F2DEDC;
+    --gold:           #8A6414;
+    --gold-bg:        #F4ECD8;
+    --radius-sm:      2px;
+    --radius-md:      3px;
+    --radius-lg:      4px;
+    --scrollbar-track: #ECECE8;
+    --scrollbar-thumb: #C9C8C3;
+    --shadow-sm:  0 1px 2px rgba(15,15,15,0.05);
+    --shadow-md:  0 4px 12px rgba(15,15,15,0.07);
+    --shadow-lg:  0 8px 24px rgba(15,15,15,0.09);
+    --font-size-xxl:  1.35rem;
+    --bg-sidebar:     var(--bg-root);
+    --font-heading:   var(--font-body);
+}
+.status-dot.online { box-shadow: none; background: var(--text-primary); }
+.data-table th { background: var(--bg-panel-alt); border-bottom: 1px solid var(--border-light); }
+.data-table td { border-bottom: 1px solid var(--border); }
+.data-table tbody tr:hover { background: #ECECE8; }
+.error-box { background: #F2DEDC; border-color: #E0B9B5; color: #6E1711; }
+.error-box strong { color: var(--danger); }
+.cell-null { color: var(--text-muted); }
+.cell-primary { color: #0F0F0F; font-weight: 500; }
+.cell-number { color: #0F0F0F; }
+.cell-date { color: #5C5B57; }
+.cell-editable:hover { background: #E9E9E5; box-shadow: inset 0 0 0 1px #D4D3CE; }
+.cell-editing { background: #FFFFFF !important; box-shadow: inset 0 0 0 2px #D2231A !important; }
+.inline-input { background: #FFFFFF; border-color: #D4D3CE; color: #0F0F0F; }
+.inline-input:focus { border-color: #D2231A; }
+.editor-container { background: #FFFFFF; border-color: #D4D3CE; }
+.editor-container:focus-within { border-color: var(--text-primary); box-shadow: none; }
+.sql-editor { background: transparent !important; color: transparent !important; caret-color: #D2231A; }
+.sql-editor::placeholder { color: #9A9893; }
+.sql-editor::selection { background: rgba(15,15,15,0.12); color: transparent; }
+.sql-editor::-moz-selection { background: rgba(15,15,15,0.12); color: transparent; }
+.editor-line-numbers { background: #FAFAF8; border-right-color: #E6E5E1; color: #B5B4AF; }
+.editor-footer { background: #FAFAF8; border-color: #D4D3CE; }
+.editor-hint kbd { background: #FFFFFF; border-color: #D4D3CE; color: #5C5B57; }
+.search-input { color: #0F0F0F; }
+.search-input::placeholder { color: #9A9893; }
+.theme-select { background: #FFFFFF; border-color: #D4D3CE; color: #5C5B57; }
+.ac-dropdown { background: #FFFFFF; border-color: #D4D3CE; box-shadow: 0 4px 16px rgba(15,15,15,0.10); }
+.ac-item:hover, .ac-item-active { background: #ECECE8; }
+.ac-item-active { background: #E6E6E1 !important; border-left-color: #D2231A; }
+.ac-icon-keyword { color: #0F0F0F; }
+.ac-icon-function { color: #5C5B57; }
+.modal-overlay { background: rgba(15,15,15,0.35); }
+.modal-box { background: #FAFAF8; border-color: #D4D3CE; }
+.table-wrapper::-webkit-scrollbar-track { background: #ECECE8; }
+.table-wrapper::-webkit-scrollbar-thumb { background: #C9C8C3; }
+.table-wrapper::-webkit-scrollbar-thumb:hover { background: #0F0F0F; }
+.table-wrapper { scrollbar-color: #C9C8C3 #ECECE8; }
+/* Syntax: keywords carry weight, not hue. The only color in a query is a string. */
+.sql-keyword   { color: #0F0F0F; font-weight: 600; }
+.sql-function  { color: #5C5B57; }
+.sql-type      { color: #5C5B57; font-style: italic; }
+.sql-string    { color: #B71F16; }
+.sql-number    { color: #0F0F0F; }
+.sql-comment   { color: #9A9893; font-style: italic; }
+.sql-operator  { color: #5C5B57; }
+.sql-punctuation { color: #9A9893; }
+.sql-identifier { color: #0F0F0F; }
+.sql-backtick  { color: #0F0F0F; background: rgba(15,15,15,0.05); }
+.sql-variable  { color: #5C5B57; font-style: italic; }
+.sql-constant  { color: #0F0F0F; font-weight: 600; }
+.sql-table     { color: #0F0F0F; text-decoration: underline; text-decoration-color: rgba(15,15,15,0.25); text-underline-offset: 2px; }
+.settings-input, .settings-textarea { background: #FFFFFF; border-color: #D4D3CE; color: #0F0F0F; }
+.settings-input:focus, .settings-textarea:focus { border-color: #0F0F0F; }
+select.settings-input option { background: #FFFFFF; }

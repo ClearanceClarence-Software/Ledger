@@ -3,7 +3,7 @@
 Run Ledger with MySQL in one command:
 
 ```bash
-git clone https://github.com/ClearanceClarence/Ledger.git
+git clone https://github.com/ClearanceClarence-Software/Ledger.git
 cd Ledger
 docker-compose up -d
 ```

@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="assets/favicon-180.png">
     <title><?= h($appName) ?> — <?= h($currentDb ?? 'Server') ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <?php
     // Load custom fonts
     $fontConfig = $config['app']['fonts'] ?? [];
@@ -51,7 +51,7 @@
     <header class="app-header">
         <div class="header-left">
             <a href="?" class="logo">
-                <?= ledger_logo(22, 'var(--accent)') ?>
+                <?= ledger_logo(22) ?>
                 <span class="logo-text"><?= h($appName) ?></span>
                 <span class="logo-version">v<?= h($appVersion) ?></span>
             </a>

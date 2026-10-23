@@ -2079,7 +2079,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span style="font-size:var(--font-size-xs);color:var(--text-muted);">
                 <?= count($enabled) ?> enabled, <?= count($disabled) ?> disabled
             </span>
-            <span style="font-size:10px;padding:2px 6px;border-radius:3px;font-weight:700;background:<?= $schedulerStatus === 'ON' ? 'rgba(74,222,128,0.1)' : 'rgba(239,68,68,0.1)' ?>;color:<?= $schedulerStatus === 'ON' ? 'var(--success,#4ade80)' : 'var(--danger,#ef4444)' ?>;font-family:var(--font-mono);" title="MySQL event_scheduler variable">
+            <span style="font-size:10px;padding:2px 6px;border-radius:3px;font-weight:700;background:<?= $schedulerStatus === 'ON' ? 'rgba(74,222,128,0.1)' : 'rgba(239,68,68,0.1)' ?>;color:<?= $schedulerStatus === 'ON' ? 'var(--success, var(--accent))' : 'var(--danger,#ef4444)' ?>;font-family:var(--font-mono);" title="MySQL event_scheduler variable">
                 scheduler: <?= h($schedulerStatus) ?>
             </span>
             <?php if (!(isset($auth) && $auth->isReadOnly())): ?>
@@ -2131,7 +2131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     $schedule = 'AT ' . h($ev['execute_at'] ?? '—');
                 }
-                $statusColor = $isEnabled ? 'var(--success,#4ade80)' : 'var(--text-muted)';
+                $statusColor = $isEnabled ? 'var(--success, var(--accent))' : 'var(--text-muted)';
                 $statusBg    = $isEnabled ? 'rgba(74,222,128,0.1)' : 'rgba(148,163,184,0.1)';
             ?>
                 <tr>

@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="assets/favicon-180.png">
     <title><?= h($appName) ?> — Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="themes/dark-industrial/style.css">
     <?php if ($activeTheme !== 'dark-industrial'): ?>
     <link rel="stylesheet" href="themes/<?= h($activeTheme) ?>/style.css">
@@ -45,10 +45,11 @@
             margin-bottom: 8px;
         }
         .login-logo-text {
-            font-family: var(--font-mono);
-            font-weight: 700;
-            font-size: 22px;
-            color: var(--accent);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
         }
         .login-subtitle {
             font-size: var(--font-size-sm);
@@ -130,7 +131,7 @@
     <div class="login-card">
         <div class="login-header">
             <div class="login-logo">
-                <?= ledger_logo(30, 'var(--accent)') ?>
+                <?= ledger_logo(30, 'var(--text-primary)') ?>
                 <span class="login-logo-text"><?= h($appName) ?></span>
             </div>
             <div class="login-subtitle">Sign in to manage your databases</div>

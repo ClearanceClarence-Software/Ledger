@@ -15,7 +15,6 @@
     --scrollbar-track: #e6e9ef; --scrollbar-thumb: #bcc0cc;
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); --shadow-md: 0 4px 12px rgba(0,0,0,0.07); --shadow-lg: 0 8px 24px rgba(0,0,0,0.09);
 }
-.logo-text { color: var(--accent); }
 .btn-primary { background: #8839ef; border-color: #8839ef; color: #fff; }
 .btn-primary:hover { background: #7230d0; }
 .btn-danger { background: #d20f39; border-color: #d20f39; color: #fff; }
