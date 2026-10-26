@@ -8,12 +8,21 @@ All notable changes to [Ledger](https://github.com/ClearanceClarence-Software/Le
 
 ---
 
-## [Unreleased]
+## [1.1.1-beta] — 2026-10-26
+
+> **New identity.** Ledger has a new look: a ruled-page mark with a single red margin line, a lowercase wordmark, new default fonts, and two new themes built on an ink-and-paper palette. Existing installs keep the theme they have chosen. The repository also moved to `ClearanceClarence-Software/Ledger`, and the browse table finally supports shift-click to select a range of rows.
 
 ### Changed
 
 - **New identity.** The mark is now a ruled page with a single red margin line, the wordmark is lowercase `ledger` set in Schibsted Grotesk, and the default typefaces are Schibsted Grotesk for the UI and Geist Mono for data and SQL (both selectable in Settings → Fonts; the previous fonts remain in the catalog). Two new themes, *Ledger* (paper) and *Ledger Dark* (ink), carry the palette — near-black, off-white, four grays and one red — and *Ledger* is the default for new installs. Existing installs keep whatever theme they had chosen. The wordmark in the header, login, 2FA and installer pages is set in the text color on every theme; only the margin line takes the theme accent. New `assets/` set: `mark.svg`, `logo.svg`, `logo-dark.svg`, favicons, the Apple touch icon and a social preview.
 - The repository moved to `ClearanceClarence-Software/Ledger`; README, SECURITY, DOCKER and CHANGELOG links updated.
+- **The Ledger themes follow their own rules.** Red marks one thing per screen and never fills behind text, so in *Ledger* and *Ledger Dark* the active tab is ink with a thin red underline, the primary button is solid ink, and selected rows and the bulk bar are gray. Category colors (info, purple, gold, database icons, nullable badges) are grays. The connection pulse is ink rather than a red dot that read as an error.
+- The default wordmark renders as lowercase `ledger` in the header, login and 2FA pages. A custom `app.name` is shown exactly as configured.
+- The last hardcoded greens in the base stylesheet (SQL editor text selection, info header ring) now follow each theme's accent, so no theme shows a stray green.
+
+### Fixed
+
+- **Shift-click selects a range of rows.** Row checkboxes in the browse table only ever toggled their own row, so selecting fifty rows for a bulk delete meant fifty clicks. Shift-clicking a checkbox now gives every row between the last clicked row and this one the clicked row's new state, so a range is selected or cleared in two clicks. The whole checkbox cell is now clickable, shift-click no longer drags a text selection across the table, and the row highlight, select-all checkbox and bulk bar are updated together.
 
 ---
 

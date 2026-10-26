@@ -7,7 +7,7 @@
 // config.php — config is per-install and never updated on upgrade, so
 // keeping version here ensures the running code and the displayed version
 // can never drift apart.
-const LEDGER_VERSION = '1.0.2-beta';
+const LEDGER_VERSION = '1.1.1-beta';
 
 // Error Handling
 error_reporting(E_ALL);
