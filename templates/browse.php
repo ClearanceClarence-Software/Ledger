@@ -1472,8 +1472,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <?php $pkVal = $pkCol ? ($row[$pkCol] ?? '') : ''; ?>
             <tr data-pk-val="<?= h(strval($pkVal)) ?>" data-row="<?= h(json_encode($row, JSON_HEX_APOS | JSON_HEX_QUOT)) ?>" class="browse-row">
                 <?php if ($pkCol): ?>
-                <td style="text-align:center;padding:4px 6px;">
-                    <input type="checkbox" class="row-checkbox row-select" data-pk="<?= h(strval($pkVal)) ?>">
+                <td class="select-cell" style="text-align:center;padding:4px 6px;">
+                    <input type="checkbox" class="row-checkbox row-select" data-pk="<?= h(strval($pkVal)) ?>" aria-label="Select row">
                 </td>
                 <?php endif; ?>
                 <?php foreach ($columns as $col): ?>

@@ -1479,28 +1479,46 @@ const Ledger = {
         const pkCol = wrapper.dataset.pk;
         if (!pkCol) return;
 
+        this.selectAnchor = null;
+
         // Select all checkbox
         selectAll.addEventListener('change', () => {
-            const checkboxes = wrapper.querySelectorAll('.row-select');
-            checkboxes.forEach(cb => {
-                cb.checked = selectAll.checked;
-                cb.closest('tr').classList.toggle('row-selected', selectAll.checked);
-            });
-            this.updateBulkBar();
+            wrapper.querySelectorAll('.row-select').forEach(cb => { cb.checked = selectAll.checked; });
+            this.selectAnchor = null;
+            this.syncSelection();
         });
 
-        // Individual row checkboxes
+        // Shift-click would otherwise extend a text selection across the rows.
+        wrapper.addEventListener('mousedown', (e) => {
+            if (e.shiftKey && e.target.closest('.select-cell')) e.preventDefault();
+        });
+
+        // Row checkboxes. A click anywhere in the checkbox cell toggles the row;
+        // shift-click sets every row between the last clicked one and this one
+        // to this row's new state, the same as a file manager.
+        wrapper.addEventListener('click', (e) => {
+            const cell = e.target.closest('.select-cell');
+            if (!cell) return;
+            const cb = cell.querySelector('.row-select');
+            if (!cb) return;
+            if (e.target !== cb) cb.checked = !cb.checked;
+
+            const boxes = Array.from(wrapper.querySelectorAll('.row-select'));
+            const from = this.selectAnchor ? boxes.indexOf(this.selectAnchor) : -1;
+            if (e.shiftKey && from !== -1) {
+                const to = boxes.indexOf(cb);
+                const [start, end] = from < to ? [from, to] : [to, from];
+                for (let i = start; i <= end; i++) boxes[i].checked = cb.checked;
+            }
+            this.selectAnchor = cb;
+            this.syncSelection();
+        });
+
+        // Keyboard toggling (Space on a focused checkbox) fires change without a click.
         wrapper.addEventListener('change', (e) => {
             if (!e.target.classList.contains('row-select')) return;
-            e.target.closest('tr').classList.toggle('row-selected', e.target.checked);
-
-            // Update select-all state
-            const all = wrapper.querySelectorAll('.row-select');
-            const checked = wrapper.querySelectorAll('.row-select:checked');
-            selectAll.checked = all.length > 0 && checked.length === all.length;
-            selectAll.indeterminate = checked.length > 0 && checked.length < all.length;
-
-            this.updateBulkBar();
+            this.selectAnchor = e.target;
+            this.syncSelection();
         });
 
         // Delete selected button
@@ -1533,19 +1551,29 @@ const Ledger = {
             .map(cb => cb.dataset.pk);
     },
 
-    clearSelection() {
+    syncSelection() {
         const wrapper = document.getElementById('browse-table');
         const selectAll = document.getElementById('select-all');
         if (!wrapper) return;
-        wrapper.querySelectorAll('.row-select').forEach(cb => {
-            cb.checked = false;
-            cb.closest('tr').classList.remove('row-selected');
+        const all = wrapper.querySelectorAll('.row-select');
+        let checked = 0;
+        all.forEach(cb => {
+            cb.closest('tr').classList.toggle('row-selected', cb.checked);
+            if (cb.checked) checked++;
         });
         if (selectAll) {
-            selectAll.checked = false;
-            selectAll.indeterminate = false;
+            selectAll.checked = all.length > 0 && checked === all.length;
+            selectAll.indeterminate = checked > 0 && checked < all.length;
         }
         this.updateBulkBar();
+    },
+
+    clearSelection() {
+        const wrapper = document.getElementById('browse-table');
+        if (!wrapper) return;
+        wrapper.querySelectorAll('.row-select').forEach(cb => { cb.checked = false; });
+        this.selectAnchor = null;
+        this.syncSelection();
     },
 
     updateBulkBar() {
