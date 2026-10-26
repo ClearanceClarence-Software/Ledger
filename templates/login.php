@@ -132,7 +132,7 @@
         <div class="login-header">
             <div class="login-logo">
                 <?= ledger_logo(30, 'var(--text-primary)') ?>
-                <span class="login-logo-text"><?= h($appName) ?></span>
+                <span class="login-logo-text"><?= h($appName === 'Ledger' ? 'ledger' : $appName) ?></span>
             </div>
             <div class="login-subtitle">Sign in to manage your databases</div>
         </div>

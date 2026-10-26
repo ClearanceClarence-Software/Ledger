@@ -49,7 +49,6 @@
     --shadow-lg:  0 8px 24px rgba(0,0,0,0.7);
 }
 
-.logo-icon { color: var(--accent); }
 .db-icon   { color: var(--warning); }
 .table-icon { color: var(--info); }
 

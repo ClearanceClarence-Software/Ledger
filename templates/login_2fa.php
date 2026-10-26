@@ -162,7 +162,7 @@
         <div class="login-header">
             <div class="login-logo">
                 <?= ledger_logo(30, 'var(--text-primary)') ?>
-                <span class="login-logo-text"><?= h($appName) ?></span>
+                <span class="login-logo-text"><?= h($appName === 'Ledger' ? 'ledger' : $appName) ?></span>
             </div>
             <div class="login-subtitle">Two-Factor Authentication</div>
         </div>

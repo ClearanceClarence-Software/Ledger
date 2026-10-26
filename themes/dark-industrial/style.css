@@ -1587,11 +1587,11 @@ textarea.inline-input {
 }
 /* Selection highlight — needs to be visible through transparent text */
 .sql-editor::selection {
-    background: rgba(74, 222, 128, 0.15);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
     color: transparent;
 }
 .sql-editor::-moz-selection {
-    background: rgba(74, 222, 128, 0.15);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
     color: transparent;
 }
 
@@ -2055,7 +2055,7 @@ textarea.inline-input {
 
 /* Color variants */
 .info-header-green::before { background: var(--accent); }
-.info-header-green .info-header-icon { background: var(--accent-bg); color: var(--accent); box-shadow: 0 0 0 1px rgba(74,222,128,0.15); }
+.info-header-green .info-header-icon { background: var(--accent-bg); color: var(--accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent); }
 
 .info-header-amber::before { background: var(--warning); }
 .info-header-amber .info-header-icon { background: var(--warning-bg); color: var(--warning); box-shadow: 0 0 0 1px rgba(240,160,48,0.15); }

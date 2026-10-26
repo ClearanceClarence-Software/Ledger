@@ -52,7 +52,7 @@
         <div class="header-left">
             <a href="?" class="logo">
                 <?= ledger_logo(22) ?>
-                <span class="logo-text"><?= h($appName) ?></span>
+                <span class="logo-text"><?= h($appName === 'Ledger' ? 'ledger' : $appName) ?></span>
                 <span class="logo-version">v<?= h($appVersion) ?></span>
             </a>
             <div class="header-meta">
